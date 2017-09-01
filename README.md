@@ -67,8 +67,8 @@ worked through [Quilt's Getting Started guide](http://docs.quilt.io/#getting-sta
 guide, now is a good time to check it out and set up Quilt.
 
 When you're set up, run `quilt daemon` in one shell, and then run
-`quilt run ./mean.js` from the `mean` directory in another shell. If successful,
-the `quilt run` command has no output, while the daemon will output logs
+`quilt run ./meanExample.js` from the `mean` directory in another shell. If
+successful, the `quilt run` command has no output, while the daemon will output logs
 similar to this:
 
 ```
