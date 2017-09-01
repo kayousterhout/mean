@@ -1,6 +1,13 @@
+const process = require('process');
 const quilt = require('@quilt/quilt');
 const Mean = require('./mean.js');
 const utils = require('./utils.js');
+
+let nodeRepository = 'https://github.com/quilt/node-todo.git';
+console.log(process.argv.length);
+if (process.argv.length > 1) {
+  nodeRepository = process.argv[1];
+}
 
 // Replication to use for the node application
 // and Mongo.
@@ -18,5 +25,5 @@ utils.addSshKey(machine);
 infrastructure.deploy(machine.asMaster());
 infrastructure.deploy(machine.asWorker().replicate(count));
 
-const mean = new Mean(count);
+const mean = new Mean(count, nodeRepository);
 infrastructure.deploy(mean);
